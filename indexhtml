@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>3D Gaussian Splatting Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>3D Gaussian Splatting Demo</h1>
+    <p class="subtitle">
+      Photorealistic Novel View Synthesis using 3D Gaussian Splatting
+    </p>
+  </header>
+
+  <main>
+    <section class="video-section">
+      <video controls autoplay loop muted>
+        <source src="assets/demo.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <section>
+      <h2>Overview</h2>
+      <p>
+        This project demonstrates high-quality novel view rendering results
+        generated using <strong>3D Gaussian Splatting (3DGS)</strong>.
+        The scene is reconstructed from real images and rendered from unseen viewpoints.
+      </p>
+    </section>
+
+    <section>
+      <h2>Method</h2>
+      <ul>
+        <li>Structure-from-Motion with COLMAP</li>
+        <li>3D Gaussian representation</li>
+        <li>Differentiable rasterization</li>
+        <li>Real-time novel view rendering</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Deployment Documentation</h2>
+      <p>
+        <a href="docs/3DGS_Deployment_Guide.pdf" target="_blank">
+          Download full deployment guide (PDF)
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      © 2026 | 3D Gaussian Splatting Demo
+    </p>
+  </footer>
+</body>
+</html>
