@@ -1,21 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>3DGS Viewer</title>
-  <script src="https://playcanvas.com/static/gaussian-splatting/gaussian-splatting.js"></script>
-  <style>
-    html, body { margin:0; width:100%; height:100%; background:#000; }
-    canvas { width:100%; height:100%; }
-  </style>
+<meta charset="UTF-8"/>
+<title>Interactive 3DGS Viewer</title>
+
+<!-- PlayCanvas Gaussian Splatting Runtime -->
+<script src="https://playcanvas.com/static/gaussian-splatting/gaussian-splatting.js"></script>
+
+<style>
+  html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(180deg, #141414, #1e1e1e);
+  }
+  canvas { width: 100%; height: 100%; display: block; }
+  .ui-label {
+    position:absolute;
+    top: 16px;
+    left: 16px;
+    font-family: "Segoe UI", Roboto, Arial;
+    color: #ddd;
+    font-size: 14px;
+    pointer-events: none;
+    opacity: 0.8;
+  }
+</style>
 </head>
+
 <body>
-  <canvas id="canvas"></canvas>
-  <script>
-    const viewer = new GaussianSplatting.Viewer({
-      canvas: document.getElementById('canvas'),
-      splatUrl: 'splat.json'
-    });
-  </script>
+
+<div class="ui-label">
+  Drag to rotate • Scroll to zoom
+</div>
+
+<canvas id="canvas"></canvas>
+
+<script>
+  const viewer = new GaussianSplatting.Viewer({
+    canvas: document.getElementById('canvas'),
+    splatUrl: 'point_cloud.ply',
+    camera: {
+      // initial
+      position: { x: 0, y: 1.0, z: 4.5 },
+      lookAt: { x: 0, y: 0.8, z: 0 },
+      fov: 55
+    },
+    // smooth controls
+    controls: {
+      enableDamping: true,
+      dampingFactor: 0.18,
+      autoRotate: false
+    }
+  });
+
+  // optional entrance animation
+  viewer.camera.position.set(0, 1.2, 6);
+  viewer.camera.lookAt(0, 0.8, 0);
+  let t = 0;
+  const animDuration = 0.8; // seconds
+  const start = { x:0, y:1.2, z:6 };
+  const end   = { x:0, y:1.0, z:4.5 };
+
+  function animate() {
+    t += 0.02;
+    const ease = (x) => x * x * (3 - 2 * x);
+
+    const f = Math.min(1, t / animDuration);
+    viewer.camera.position.x = start.x + (end.x - start.x) * ease(f);
+    viewer.camera.position.y = start.y + (end.y - start.y) * ease(f);
+    viewer.camera.position.z = start.z + (end.z - start.z) * ease(f);
+
+    viewer.camera.lookAt(0, 0.8, 0);
+
+    if (f < 1) requestAnimationFrame(animate);
+  }
+  animate();
+</script>
+
 </body>
 </html>
+
