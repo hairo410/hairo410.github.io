@@ -21,6 +21,42 @@
       </video>
     </section>
 
+    <section class="compare-section">
+      <h2>3DGS Reconstruction Effect</h2>
+      <p class="desc">
+        The left image is a frame from the original UAV video.
+        The right image is rendered from the 3D Gaussian Splatting model.
+        Dynamic objects (e.g. vehicles and pedestrians) are removed during reconstruction,
+        demonstrating that the scene is reconstructed in 3D rather than replayed.
+      </p>
+
+      <div class="compare-grid">
+        <div>
+          <img src="assets/compare/raw.png" alt="Original Video Frame">
+          <span>Original Video</span>
+        </div>
+        <div>
+          <img src="assets/compare/gs.png" alt="3DGS Render">
+          <span>3DGS Rendered View</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="viewer-section">
+      <h2>Interactive 3DGS Viewer</h2>
+      <p class="desc">
+        Users can freely explore the reconstructed scene with mouse interaction.
+        This view is rendered directly from the 3D Gaussian representation.
+      </p>
+
+      <iframe
+        src="viewer/index.html"
+        width="100%"
+        height="600"
+        style="border:none; border-radius:16px;">
+      </iframe>
+    </section>
+
     <section>
       <h2>Overview</h2>
       <p>

@@ -62,3 +62,34 @@ footer {
   color: #888;
   font-size: 14px;
 }
+
+.compare-section {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.compare-section .desc {
+  max-width: 720px;
+  margin: 1rem auto 2rem;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.compare-grid img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.compare-grid span {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #888;
+}
