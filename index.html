@@ -43,21 +43,18 @@
     </section>
 
     <section class="interactive-viewer-section">
-      <h2>Explore the 3D Reconstruction</h2>
+      <h2>Free Viewpoint Exploration</h2>
       <p class="viewer-desc">
-        You can freely rotate, zoom, and explore the 3D reconstructed scene below.
+        The following video is recorded from an interactive Gaussian Splatting viewer.
+        The camera is freely moved by the user to demonstrate real-time novel view rendering
+        of the reconstructed 3D scene.
       </p>
 
       <div class="viewer-container">
-        <iframe
-          src="https://playcanvas.com/viewer/?load=blob:https://playcanvas.com/27af2031-2a51-45c1-9358-289554fbc53f"
-          width="100%"
-          height="600"
-          frameborder="0"
-          allowfullscreen
-          scrolling="no"
-          style="border: none; border-radius: 12px;">
-        </iframe>
+        <video controls loop muted playsinline>
+          <source src="assets/playcanvas_demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
     </section>
 
@@ -72,14 +69,43 @@
     </section>
 
     <section>
-      <h2>Method</h2>
-      <ul>
-        <li>Structure-from-Motion with COLMAP</li>
-        <li>3D Gaussian representation</li>
-        <li>Differentiable rasterization</li>
-        <li>Real-time novel view rendering</li>
-      </ul>
+      <h2>Method Overview</h2>
+
+      <div class="method-grid">
+        <div class="method-item">
+          <div class="method-icon">📷</div>
+          <div>
+            <strong>Structure-from-Motion</strong>
+            <p>Camera poses and sparse geometry reconstructed using COLMAP.</p>
+          </div>
+        </div>
+
+        <div class="method-item">
+          <div class="method-icon">☁️</div>
+          <div>
+            <strong>3D Gaussian Representation</strong>
+            <p>Scene is represented as anisotropic 3D Gaussians with color and opacity.</p>
+          </div>
+        </div>
+
+        <div class="method-item">
+          <div class="method-icon">🎯</div>
+          <div>
+            <strong>Differentiable Rasterization</strong>
+            <p>Efficient splatting-based rasterizer enables gradient-based optimization.</p>
+          </div>
+        </div>
+
+        <div class="method-item">
+          <div class="method-icon">⚡</div>
+          <div>
+            <strong>Real-time Novel View Rendering</strong>
+            <p>High-quality views rendered at interactive frame rates.</p>
+          </div>
+        </div>
+      </div>
     </section>
+
 
     <section>
       <h2>Deployment Documentation</h2>

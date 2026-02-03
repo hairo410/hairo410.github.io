@@ -119,3 +119,33 @@ footer {
   overflow: hidden;
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
+
+.method-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.method-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.method-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.method-item p {
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+@media (max-width: 700px) {
+  .method-grid {
+    grid-template-columns: 1fr;
+  }
+}
