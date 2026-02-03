@@ -6,6 +6,9 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
@@ -46,24 +49,26 @@
     </section>
 
     <section class="interactive-viewer-section">
-      <h2>Free Viewpoint Exploration</h2>
-      <p class="viewer-desc">
+      <h2 class="section-title">Free Viewpoint Exploration</h2>
+
+      <p class="viewer-desc center">
         The following video is recorded from an interactive Gaussian Splatting viewer.
-        The camera is freely moved by the user to demonstrate real-time novel view rendering
-        of the reconstructed 3D scene.
+        The camera is freely controlled to demonstrate real-time novel view rendering.
       </p>
 
       <div class="viewer-container">
-        <video controls loop muted playsinline>
-          <source src="assets/playcanvas_demo.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <video
+          src="assets/free_view.mp4"
+          autoplay
+          loop
+          muted
+          playsinline
+        ></video>
       </div>
     </section>
 
-
     <section>
-      <h2>Overview</h2>
+      <h2 class="section-title">Overview</h2>
       <p>
         This project demonstrates high-quality novel view rendering results
         generated using <strong>3D Gaussian Splatting (3DGS)</strong>.
@@ -72,7 +77,7 @@
     </section>
 
     <section>
-      <h2>Method Overview</h2>
+      <h2 class="section-title">Method Overview</h2>
 
       <div class="method-grid">
         <div class="method-item">
@@ -111,7 +116,7 @@
 
 
     <section>
-      <h2>Deployment Documentation</h2>
+      <h2 class="section-title">Deployment Documentation</h2>
       <p>
         <a href="docs/3DGS_Deployment_Guide.pdf" target="_blank">
           Download full deployment guide (PDF)
