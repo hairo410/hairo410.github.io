@@ -3,132 +3,137 @@
 <head>
   <meta charset="UTF-8" />
   <title>3D Gaussian Splatting Demo</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <header>
-    <h1>3D Gaussian Splatting Demo</h1>
-    <p class="subtitle">
-      Photorealistic Novel View Synthesis using 3D Gaussian Splatting
-    </p>
-  </header>
 
-  <main>
-    <section class="video-section">
-      <video controls autoplay loop muted>
-        <source src="assets/demo.mp4" type="video/mp4">
+<header>
+  <h1>3D Gaussian Splatting Demo</h1>
+  <p class="subtitle">
+    Photorealistic Novel View Synthesis using 3D Gaussian Splatting
+  </p>
+</header>
+
+<main>
+
+  <!-- ================= Video Demo ================= -->
+  <section class="video-section">
+    <video autoplay loop muted playsinline preload="auto">
+      <source src="assets/demo.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <!-- ================= Comparison ================= -->
+  <section class="compare-section">
+    <h2 class="section-title">3DGS Reconstruction Effect</h2>
+
+    <p class="desc">
+      The left image is a frame from the original UAV video.
+      The right image is rendered from the 3D Gaussian Splatting model.
+      Dynamic objects (e.g. vehicles and pedestrians) are removed during reconstruction,
+      demonstrating that the scene is reconstructed in 3D rather than replayed.
+    </p>
+
+    <div class="compare-grid">
+      <div>
+        <img src="assets/compare/raw.png" alt="Original Video Frame">
+        <span>Original Video</span>
+      </div>
+      <div>
+        <img src="assets/compare/gs.png" alt="3DGS Rendered View">
+        <span>3DGS Rendered View</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Free View ================= -->
+  <section class="interactive-viewer-section">
+    <h2 class="section-title">Free Viewpoint Exploration</h2>
+
+    <p class="viewer-desc center">
+      The following video is recorded from an interactive Gaussian Splatting viewer.
+      The camera is freely controlled to demonstrate real-time novel view rendering.
+    </p>
+
+    <div class="viewer-container">
+      <video autoplay loop muted playsinline preload="auto">
+        <source src="assets/playcanvas_demo.mp4" type="video/mp4">
       </video>
-    </section>
+    </div>
+  </section>
 
-    <section class="compare-section">
-      <h2>3DGS Reconstruction Effect</h2>
-      <p class="desc">
-        The left image is a frame from the original UAV video.
-        The right image is rendered from the 3D Gaussian Splatting model.
-        Dynamic objects (e.g. vehicles and pedestrians) are removed during reconstruction,
-        demonstrating that the scene is reconstructed in 3D rather than replayed.
-      </p>
-
-      <div class="compare-grid">
-        <div>
-          <img src="assets/compare/raw.png" alt="Original Video Frame">
-          <span>Original Video</span>
-        </div>
-        <div>
-          <img src="assets/compare/gs.png" alt="3DGS Render">
-          <span>3DGS Rendered View</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="interactive-viewer-section">
-      <h2 class="section-title">Free Viewpoint Exploration</h2>
-
-      <p class="viewer-desc center">
-        The following video is recorded from an interactive Gaussian Splatting viewer.
-        The camera is freely controlled to demonstrate real-time novel view rendering.
-      </p>
-
-      <div class="viewer-container">
-        <video
-          src="assets/playcanvas_demo.mp4"
-          autoplay
-          loop
-          muted
-          playsinline
-        ></video>
-      </div>
-    </section>
-
-    <section>
-      <h2 class="section-title">Overview</h2>
-      <p>
-        This project demonstrates high-quality novel view rendering results
-        generated using <strong>3D Gaussian Splatting (3DGS)</strong>.
-        The scene is reconstructed from real images and rendered from unseen viewpoints.
-      </p>
-    </section>
-
-    <section>
-      <h2 class="section-title">Method Overview</h2>
-
-      <div class="method-grid">
-        <div class="method-item">
-          <div class="method-icon">📸</div>
-          <div>
-            <strong>Structure-from-Motion</strong>
-            <p>Camera poses and sparse geometry reconstructed using COLMAP.</p>
-          </div>
-        </div>
-
-        <div class="method-item">
-          <div class="method-icon">🎨</div>
-          <div>
-            <strong>3D Gaussian Representation</strong>
-            <p>Scene is represented as anisotropic 3D Gaussians with color and opacity.</p>
-          </div>
-        </div>
-
-        <div class="method-item">
-          <div class="method-icon">🪜</div>
-          <div>
-            <strong>Differentiable Rasterization</strong>
-            <p>Efficient splatting-based rasterizer enables gradient-based optimization.</p>
-          </div>
-        </div>
-
-        <div class="method-item">
-          <div class="method-icon">🌟</div>
-          <div>
-            <strong>Real-time Novel View Rendering</strong>
-            <p>High-quality views rendered at interactive frame rates.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section>
-      <h2 class="section-title">Deployment Documentation</h2>
-      <p>
-        <a href="docs/3DGS_Deployment_Guide.pdf" target="_blank">
-          Download full deployment guide (PDF)
-        </a>
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    <p>
-      © 2026 | 3D Gaussian Splatting Demo
+  <!-- ================= Overview ================= -->
+  <section>
+    <h2 class="section-title">Overview</h2>
+    <p class="center-text">
+      This project demonstrates high-quality novel view rendering results
+      generated using <strong>3D Gaussian Splatting (3DGS)</strong>.
+      The scene is reconstructed from real images and rendered from unseen viewpoints.
     </p>
-  </footer>
+  </section>
+
+  <!-- ================= Method ================= -->
+  <section>
+    <h2 class="section-title">Method Overview</h2>
+
+    <div class="method-grid">
+      <div class="method-item">
+        <div class="method-icon">📸</div>
+        <div>
+          <strong>Structure-from-Motion</strong>
+          <p>Camera poses and sparse geometry reconstructed using COLMAP.</p>
+        </div>
+      </div>
+
+      <div class="method-item">
+        <div class="method-icon">🎨</div>
+        <div>
+          <strong>3D Gaussian Representation</strong>
+          <p>Scene represented as anisotropic 3D Gaussians with color and opacity.</p>
+        </div>
+      </div>
+
+      <div class="method-item">
+        <div class="method-icon">🪜</div>
+        <div>
+          <strong>Differentiable Rasterization</strong>
+          <p>Splatting-based rasterization enables gradient-based optimization.</p>
+        </div>
+      </div>
+
+      <div class="method-item">
+        <div class="method-icon">⚡</div>
+        <div>
+          <strong>Real-time Rendering</strong>
+          <p>High-quality novel views rendered at interactive frame rates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Docs ================= -->
+  <section>
+    <h2 class="section-title">Deployment Documentation</h2>
+    <p class="center">
+      <a href="docs/3DGS_Deployment_Guide.pdf" target="_blank">
+        Download full deployment guide (PDF)
+      </a>
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 | 3D Gaussian Splatting Demo</p>
+</footer>
+
 </body>
 </html>

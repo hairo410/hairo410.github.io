@@ -1,22 +1,10 @@
+/* ========== Global ========== */
 body {
+  margin: 0;
   font-family: "Inter", -apple-system, BlinkMacSystemFont,
                "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
-
-
-header {
-  text-align: center;
-  padding: 60px 20px 40px;
-}
-
-h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  font-size: 18px;
-  color: #666;
+  background-color: #ffffff;
+  color: #222;
 }
 
 main {
@@ -25,6 +13,46 @@ main {
   padding: 20px;
 }
 
+/* ========== Header ========== */
+header {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #666;
+}
+
+/* ========== Sections ========== */
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 4rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+.center {
+  text-align: center;
+}
+
+.center-text {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ========== Video ========== */
 .video-section {
   text-align: center;
   margin: 40px 0;
@@ -33,39 +61,11 @@ main {
 video {
   width: 100%;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  display: block;
 }
 
-h2 {
-  margin-top: 40px;
-  font-size: 26px;
-  text-align: center;
-  letter-spacing: 0.02em;
-}
-
-p, li {
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-a {
-  color: #0057ff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-footer {
-  text-align: center;
-  padding: 40px;
-  color: #888;
-  font-size: 14px;
-}
-
+/* ========== Comparison ========== */
 .compare-section {
-  margin-top: 4rem;
   text-align: center;
 }
 
@@ -95,15 +95,9 @@ footer {
   color: #888;
 }
 
+/* ========== Viewer Section ========== */
 .interactive-viewer-section {
-  margin-top: 4rem;
   text-align: center;
-}
-
-.interactive-viewer-section h2 {
-  font-size: 1.8rem;
-  color: #222;
-  margin-bottom: 0.5rem;
 }
 
 .viewer-desc {
@@ -121,6 +115,7 @@ footer {
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
+/* ========== Method ========== */
 .method-grid {
   margin-top: 1.5rem;
   display: grid;
@@ -145,25 +140,18 @@ footer {
   color: #555;
 }
 
+/* ========== Footer ========== */
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #888;
+  font-size: 14px;
+}
+
+/* ========== Responsive ========== */
 @media (max-width: 700px) {
+  .compare-grid,
   .method-grid {
     grid-template-columns: 1fr;
   }
-}
-
-.section-title {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 0.6rem;
-}
-
-.center {
-  text-align: center;
-}
-
-.viewer-container video {
-  width: 100%;
-  display: block;
-  border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
