@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   <style>
@@ -20,7 +19,7 @@
     .link-block a:hover { background-color: #4a4a4a; transform: translateY(-2px); }
     .abstract-text { font-size: 1.1rem; line-height: 1.6; text-align: justify; }
     .method-image { max-width: 80%; margin: 0 auto; display: block; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-    .compare-img { width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
+    .compare-media { width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); display: block; }
     .caption { text-align: center; color: #666; font-size: 0.95rem; margin-top: 10px; }
   </style>
 </head>
@@ -54,7 +53,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./assets/teaser.png" class="method-image" alt="Teaser Image" onerror="this.src='https://via.placeholder.com/1000x400?text=Place+teaser.png+in+assets+folder'">
+      <img src="./assets/teaser.png" class="method-image" alt="Teaser Image" onerror="this.style.display='none'">
       <h2 class="subtitle has-text-centered" style="margin-top: 20px; line-height: 1.5;">
         Achieving highly pure 3D geometric topology and significant storage reduction by eliminating over 1.3 million floating artifacts in unbounded scenes.
       </h2>
@@ -86,7 +85,7 @@
       <div class="column is-full-width">
         <h2 class="title is-3 has-text-centered">Method</h2>
         
-        <img src="./assets/pipeline.png" class="method-image" alt="Pipeline Diagram" style="margin-bottom: 30px;" onerror="this.src='https://via.placeholder.com/900x350?text=Place+pipeline.png+in+assets+folder'">
+        <img src="./assets/pipeline.png" class="method-image" alt="Pipeline Diagram" style="margin-bottom: 30px;" onerror="this.style.display='none'">
         
         <div class="content has-text-justified" style="font-size: 1.1rem; line-height: 1.6;">
           <p>To address floating artifacts, we designed a dual prior regularization term:</p>
@@ -107,22 +106,28 @@
     
     <div class="columns is-centered">
       <div class="column is-half">
-        <img src="./assets/lego_baseline.png" class="compare-img" alt="Lego Baseline" onerror="this.src='https://via.placeholder.com/500x300?text=Place+lego_baseline.png'">
+        <img src="./assets/lego_baseline.png" class="compare-media" alt="Lego Baseline" onerror="this.src='https://via.placeholder.com/500x300?text=Place+lego_baseline.png'">
         <p class="caption">Baseline: Severe floating artifacts and scattered noise</p>
       </div>
       <div class="column is-half">
-        <img src="./assets/lego_ours.png" class="compare-img" alt="Lego Ours" onerror="this.src='https://via.placeholder.com/500x300?text=Place+lego_ours.png'">
+        <img src="./assets/lego_ours.png" class="compare-media" alt="Lego Ours" onerror="this.src='https://via.placeholder.com/500x300?text=Place+lego_ours.png'">
         <p class="caption"><strong>Ours: Highly pure geometric structures</strong></p>
       </div>
     </div>
 
     <div class="columns is-centered" style="margin-top: 40px;">
       <div class="column is-half">
-        <img src="./assets/yixian_baseline.webm" class="compare-img" alt="Yixian Baseline" onerror="this.src='https://via.placeholder.com/500x300?text=Place+yixian_baseline.png'">
+        <video class="compare-media" autoplay loop muted playsinline>
+          <source src="./assets/yixian_baseline.webm" type="video/webm">
+          Your browser does not support the video tag.
+        </video>
         <p class="caption">Baseline (Real-world Scene): Massive cloudy artifacts in the sky</p>
       </div>
       <div class="column is-half">
-        <img src="./assets/yixian_ours.webm" class="compare-img" alt="Yixian Ours" onerror="this.src='https://via.placeholder.com/500x300?text=Place+yixian_ours.png'">
+        <video class="compare-media" autoplay loop muted playsinline>
+          <source src="./assets/yixian_ours.webm" type="video/webm">
+          Your browser does not support the video tag.
+        </video>
         <p class="caption"><strong>Ours (Real-world Scene): Precise pruning, 26.2% volume reduction</strong></p>
       </div>
     </div>
