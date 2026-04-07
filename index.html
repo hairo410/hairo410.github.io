@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lightweight 3DGS for Robotic Mapping</title>
+  <title>Lightweight 3DGS via Physical Constraint Pruning</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
@@ -29,7 +29,7 @@
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop text-center" style="text-align: center;">
-      <h1 class="title is-1 publication-title">Lightweight 3DGS for Robotic Mapping:<br>Physical Constraint Pruning via Spatio-Scale Dual Priors</h1>
+      <h1 class="title is-1 publication-title">Lightweight 3DGS:<br>Physical Constraint Pruning via Spatio-Scale Dual Priors</h1>
       
       <div class="column has-text-centered">
         <div class="publication-links">
@@ -56,7 +56,7 @@
     <div class="hero-body">
       <img src="./assets/teaser.png" class="method-image" alt="Teaser Image" onerror="this.src='https://via.placeholder.com/1000x400?text=Place+teaser.png+in+assets+folder'">
       <h2 class="subtitle has-text-centered" style="margin-top: 20px; line-height: 1.5;">
-        By eliminating over 1.3 million floating artifacts, our method preserves extreme purity in 3D geometric topology, clearing fatal suspended obstacles for autonomous robot navigation.
+        Achieving highly pure 3D geometric topology and significant storage reduction by eliminating over 1.3 million floating artifacts in unbounded scenes.
       </h2>
     </div>
   </div>
@@ -69,10 +69,10 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified abstract-text">
           <p>
-            While 3D Gaussian Splatting (3DGS) demonstrates exceptional rendering efficiency in novel view synthesis tasks, its underlying optimization mechanism exhibits significant geometric flaws in unconstrained real-world mapping. 3DGS tends to generate a massive amount of redundant, highly elongated Gaussian ellipsoids (floating and specular artifacts) in blank areas. This not only leads to excessive parameter bloat but also causes severe physical geometric distortions, making it highly susceptible to navigation failures in downstream active SLAM and local path planning.
+            While 3D Gaussian Splatting (3DGS) demonstrates exceptional rendering efficiency in novel view synthesis tasks, its underlying optimization mechanism exhibits significant geometric flaws in unconstrained real-world mapping. 3DGS tends to generate a massive amount of redundant, highly elongated Gaussian ellipsoids (floating and specular artifacts) in blank areas. This not only leads to excessive parameter bloat and inefficient memory usage but also causes severe physical geometric distortions.
           </p>
           <p>
-            This study proposes a computationally lightweight and efficient <strong>Spatio-Scale Dual Distance-Aware Regularization</strong> strategy. Without altering the underlying CUDA rasterization architecture of 3DGS, it achieves a paradigm shift from "pure photometric fitting" to "physical geometric fidelity" by introducing spatial and scale priors. Experiments demonstrate that our method reduces model storage by 18.9% in synthetic scenes and achieves a 26.2% volume compression in large-scale unbounded real-world scenes. The generated pure point clouds can directly serve robot local navigation.
+            This study proposes a computationally lightweight and efficient <strong>Spatio-Scale Dual Distance-Aware Regularization</strong> strategy. Without altering the underlying CUDA rasterization architecture of 3DGS, it achieves a paradigm shift from "pure photometric fitting" to "physical geometric fidelity" by introducing spatial and scale priors. Experiments demonstrate that our method reduces model storage by 18.9% in synthetic scenes and achieves a 26.2% volume compression in large-scale unbounded real-world scenes, resulting in highly pure 3D assets suitable for memory-constrained applications.
           </p>
         </div>
       </div>
@@ -119,11 +119,11 @@
     <div class="columns is-centered" style="margin-top: 40px;">
       <div class="column is-half">
         <img src="./assets/yixian_baseline.png" class="compare-img" alt="Yixian Baseline" onerror="this.src='https://via.placeholder.com/500x300?text=Place+yixian_baseline.png'">
-        <p class="caption">Baseline (Real-world Drone): Massive cloudy artifacts in the sky</p>
+        <p class="caption">Baseline (Real-world Scene): Massive cloudy artifacts in the sky</p>
       </div>
       <div class="column is-half">
         <img src="./assets/yixian_ours.png" class="compare-img" alt="Yixian Ours" onerror="this.src='https://via.placeholder.com/500x300?text=Place+yixian_ours.png'">
-        <p class="caption"><strong>Ours (Real-world Drone): Precise pruning, 26.2% volume reduction</strong></p>
+        <p class="caption"><strong>Ours (Real-world Scene): Precise pruning, 26.2% volume reduction</strong></p>
       </div>
     </div>
 
